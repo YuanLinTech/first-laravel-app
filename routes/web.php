@@ -72,4 +72,4 @@ Route::get('/group-test', function(){
     return 'Hello user';
 })->name('test');
 
-Route::view('/first','first');
+Route::view('/first', 'first', ['name' => 'Taylor']);
