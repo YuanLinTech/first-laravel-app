@@ -13,8 +13,10 @@ class Kernel extends HttpKernel
      *
      * @var array<int, class-string|string>
      */
+    // Global middleware
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
+        \App\Http\Middleware\Second::class,
         \App\Http\Middleware\TrustProxies::class,
         \Illuminate\Http\Middleware\HandleCors::class,
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
@@ -28,6 +30,7 @@ class Kernel extends HttpKernel
      *
      * @var array<string, array<int, class-string|string>>
      */
+    // Group middleware
     protected $middlewareGroups = [
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
@@ -52,6 +55,7 @@ class Kernel extends HttpKernel
      *
      * @var array<string, class-string|string>
      */
+    // Route middleware
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -63,6 +67,7 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'first' => \App\Http\Middleware\First::class
+        'first' => \App\Http\Middleware\First::class,
+        'second' => \App\Http\Middleware\Second::class
     ];
 }

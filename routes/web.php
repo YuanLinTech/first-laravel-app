@@ -17,6 +17,10 @@ Route::get('/', function(){
     return view('welcome'); // Returns the view "resources/views/welcome.blade.php"
 })->middleware('first');
 
+Route::get('/noaccess', function(){
+    return "You do not have the access in this computer.";
+})->name('noaccess');
+
 Route::get('/test', function(){
     return "Hello World!";
 })->name('test');
@@ -73,7 +77,3 @@ Route::get('/group-test', function(){
 })->name('test');
 
 Route::view('/first', 'first', ['name' => 'Taylor']);
-
-Route::get('/noaccess', function(){
-    return "You do not have the access in this computer.";
-})->name('noaccess');
