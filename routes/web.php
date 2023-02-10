@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){
     return view('welcome'); // Returns the view "resources/views/welcome.blade.php"
-});
+})->middleware('group');
 
 Route::get('/noaccess', function(){
     return "You do not have the access in this computer.";
