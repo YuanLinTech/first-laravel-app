@@ -16,6 +16,7 @@ class Second
      */
     public function handle(Request $request, Closure $next)
     {
+        echo "I'm global middleware";
         return $next($request);
     }
 }

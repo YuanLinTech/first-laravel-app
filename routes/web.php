@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){
     return view('welcome'); // Returns the view "resources/views/welcome.blade.php"
-})->middleware('first');
+});
 
 Route::get('/noaccess', function(){
     return "You do not have the access in this computer.";
@@ -24,6 +24,9 @@ Route::get('/noaccess', function(){
 Route::get('/test', function(){
     return "Hello World!";
 })->name('test');
+
+Route::get('/test-1', function(){})
+->middleware('first');
 
 Route::get('/first-view', function(){
     return view('first', ['name' => 'Samantha']);

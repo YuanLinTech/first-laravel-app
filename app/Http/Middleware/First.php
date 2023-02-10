@@ -16,12 +16,14 @@ class First
      */
     public function handle(Request $request, Closure $next)
     {   
-        // If the token is "verified", the middleware will return an HTTP redirect to the client
+        /* // If the token is "verified", the middleware will return an HTTP redirect to the client
         if ($request->input('token') === "verified"){
             return $next($request);
         }
 
         // If the given token is not "verified", the middleware will return an HTTP redirect to the client
-        return redirect()->route('noaccess');
+        return redirect()->route('noaccess');*/
+        echo "I am route middleware";
+        return $next($request);
     }
 }
