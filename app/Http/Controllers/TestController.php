@@ -8,6 +8,7 @@ class TestController extends Controller
 {
     public function index()
     {
-        return view('first', ['name' => 'Samantha']);
+        $data = 'John Doe';
+        return view('first', ['data' => $data, 'name' => 'Samantha']);
     }
 }

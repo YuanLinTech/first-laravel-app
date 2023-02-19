@@ -7,9 +7,7 @@
     <title>First Laravel View</title>
 </head>
 <body>
-    <h1>This is our first Laravel view.</h1>
+    <h1>My name is {{ $data }}.</h1>
     <div>Hello, {{ $name }}.</div>
-    <a href='/test'>Test</a><br>
-    <a href="{{route('test')}}">Test route</a>
 </body>
 </html>
