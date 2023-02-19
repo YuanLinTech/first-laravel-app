@@ -14,9 +14,11 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::get('/', function(){
+/* Route::get('/', function(){
     return view('welcome');
-});
+});*/
+
+Route::get('/', [App\Http\Controllers\TestController::class, 'index'])->name('home');
 
 Route::get('/noaccess', function(){
     return "You do not have the access in this computer.";
