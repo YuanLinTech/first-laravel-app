@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[App\Http\Controllers\TestController::class, 'index'])->name('home');
+Route::get('/', function(){
+    return view('welcome');
+});
 
 Route::get('/noaccess', function(){
     return "You do not have the access in this computer.";
@@ -66,10 +69,10 @@ Route::middleware('first')->group(function(){
 Route::prefix('admin')->group(function(){
     Route::get('/group-test', function(){
         return 'Hello admin';
-    })->name('first');
+    })->name('first');// Matches The "/admin/group-test" URL
 
     Route::get('/group-test1', function(){
-        return 'Hello admin1';
+        return 'Hello admin1';// Matches The "/admin/group-test1" URL
     })->name('second');
 });
 
